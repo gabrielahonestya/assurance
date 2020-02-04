@@ -1,0 +1,19 @@
+title: product
+type: object
+description: ''
+properties:
+  id:
+    type: string
+  name:
+    type: string
+  category:
+    type: string
+  stock:
+    type: string
+  price:
+    type: string
+  '':
+    type: string
+required:
+  - id
+  - name

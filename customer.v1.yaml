@@ -1,0 +1,19 @@
+title: customer
+type: object
+x-examples:
+  example-1: {}
+properties:
+  id:
+    type: string
+  name:
+    type: string
+  birthdate:
+    type: string
+    format: date
+  address:
+    type: string
+  phone:
+    type: string
+required:
+  - id
+  - name

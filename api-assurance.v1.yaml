@@ -1,0 +1,261 @@
+openapi: 3.0.0
+info:
+  title: assurance
+  version: '1.0'
+servers:
+  - url: 'http://localhost:3000'
+paths:
+  /assurance:
+    get:
+      summary: Get
+      tags: []
+      responses: {}
+      operationId: get-assurance
+    post:
+      summary: Post
+      tags: []
+      responses: {}
+      operationId: post-assurance
+    put:
+      summary: Put
+      tags: []
+      responses: {}
+      operationId: put-assurance
+    delete:
+      summary: Delete
+      tags: []
+      responses: {}
+      operationId: delete-assurance
+  '/assurance/{getcust}':
+    parameters:
+      - schema:
+          type: string
+        name: getcust
+        in: path
+        required: true
+    get:
+      summary: Get Customer
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+      operationId: get-assurance-getcust
+      parameters: []
+      description: Get Customer Data
+  '/assurance/{getprod}':
+    parameters:
+      - schema:
+          type: string
+        name: getprod
+        in: path
+        required: true
+    get:
+      summary: Get Product
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    title: product
+                    type: object
+                    description: ''
+                    properties:
+                      id:
+                        type: string
+                      name:
+                        type: string
+                      category:
+                        type: string
+                      stock:
+                        type: string
+                      price:
+                        type: string
+                      '':
+                        type: string
+                    required:
+                      - id
+                      - name
+      operationId: get-assurance-getprod
+  '/assurance/{postapp}':
+    parameters:
+      - schema:
+          type: string
+        name: postapp
+        in: path
+        required: true
+    post:
+      summary: Create Applications
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    title: aplicant
+                    type: object
+                    description: ''
+                    properties:
+                      id:
+                        type: string
+                      no_faktur:
+                        type: string
+                      id_product:
+                        title: product
+                        type: object
+                        description: ''
+                        properties:
+                          id:
+                            type: string
+                          name:
+                            type: string
+                          category:
+                            type: string
+                          stock:
+                            type: string
+                          price:
+                            type: string
+                          '':
+                            type: string
+                      id_customer:
+                        title: customer
+                        type: object
+                        x-examples:
+                          example-1: {}
+                        properties:
+                          id:
+                            type: string
+                          name:
+                            type: string
+                          birthdate:
+                            type: string
+                          address:
+                            type: string
+                          phone:
+                            type: string
+                      value:
+                        type: number
+                        format: float
+                      status:
+                        type: string
+                    required:
+                      - id
+                      - no_faktur
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+      operationId: post-assurance-postapp
+  '/user/{postas}':
+    parameters:
+      - schema:
+          type: string
+        name: postas
+        in: path
+        required: true
+    post:
+      summary: Create Assurance
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    title: assurance
+                    type: object
+                    description: ''
+                    properties:
+                      id:
+                        type: string
+                      no_klaim:
+                        type: string
+                      nilai_pertanggungan:
+                        type: string
+                      nilai_resiko:
+                        type: string
+                      nilai_klaim:
+                        type: string
+                      nilai_subrogasi:
+                        type: string
+                      id_application:
+                        title: aplicant
+                        type: object
+                        description: ''
+                        properties:
+                          id:
+                            type: string
+                          no_faktur:
+                            type: string
+                          id_product:
+                            title: product
+                            type: object
+                            description: ''
+                            properties:
+                              id:
+                                type: string
+                              name:
+                                type: string
+                              category:
+                                type: string
+                              stock:
+                                type: string
+                              price:
+                                type: string
+                              '':
+                                type: string
+                          id_customer:
+                            title: customer
+                            type: object
+                            x-examples:
+                              example-1: {}
+                            properties:
+                              id:
+                                type: string
+                              name:
+                                type: string
+                              birthdate:
+                                type: string
+                              address:
+                                type: string
+                              phone:
+                                type: string
+                          value:
+                            type: number
+                            format: float
+                          status:
+                            type: string
+                        required:
+                          - id
+                          - no_faktur
+                    required:
+                      - id
+                      - no_klaim
+        '201':
+          description: Created
+      operationId: post-user-postas
+components:
+  schemas: {}

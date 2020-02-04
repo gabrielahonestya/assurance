@@ -1,0 +1,49 @@
+title: aplicant
+type: object
+description: ''
+properties:
+  id:
+    type: string
+  no_faktur:
+    type: string
+  id_product:
+    title: product
+    type: object
+    description: ''
+    properties:
+      id:
+        type: string
+      name:
+        type: string
+      category:
+        type: string
+      stock:
+        type: string
+      price:
+        type: string
+      '':
+        type: string
+  id_customer:
+    title: customer
+    type: object
+    x-examples:
+      example-1: {}
+    properties:
+      id:
+        type: string
+      name:
+        type: string
+      birthdate:
+        type: string
+      address:
+        type: string
+      phone:
+        type: string
+  value:
+    type: number
+    format: float
+  status:
+    type: string
+required:
+  - id
+  - no_faktur
